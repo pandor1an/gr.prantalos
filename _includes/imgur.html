@@ -1,0 +1,53 @@
+{%- if include.thumbnail=="enlarge" -%}
+<div class="text-center">
+	<div class="modal fade"
+		id="imgurEnlargementModal{{ include.id }}"
+		tabindex="-1"
+		aria-labelledby="imgurEnlargementModalLabel{{ include.id }}"
+		aria-hidden="true"
+	>
+		<div class="modal-dialog modal-xl">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+                    <img
+                        src="https://i.imgur.com/{{ include.id }}.jpg"
+                        class="img-fluid d-block w-100"
+                        alt="Imgur ID {{ include.id }}"
+                    />
+                </div>
+			</div>
+		</div>
+	</div><div
+		class="img-container-enlargeable"
+		data-bs-toggle="modal"
+		data-bs-target="#imgurEnlargementModal{{ include.id }}"
+	>
+		<img
+			src="https://i.imgur.com/{{ include.id }}b.jpg"
+			class="figure-img img-fluid rounded "
+			alt="Imgur ID {{ include.id }} Thumb"
+		/>
+		{% if include.caption %}
+			<figcaption class="figure-caption text-center">
+				{{ include.caption }}
+			</figcaption>
+		{% endif %}
+	</div>
+</div>
+{%- else -%}
+	<figure class="figure w-100">
+		<img
+			src="https://i.imgur.com/{{ include.id }}.jpg"
+			class="figure-img img-fluid rounded d-block mx-auto"
+			alt="Imgur ID {{ include.id }}"
+		>
+		{% if include.caption %}
+			<figcaption class="figure-caption text-center">
+				{{ include.caption }}
+			</figcaption>
+		{% endif %}
+	</figure>
+{%- endif -%}

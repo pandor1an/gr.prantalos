@@ -1,0 +1,21 @@
+{% assign className = "primary" %}
+{% assign iconName = "fa-info-circle" %}
+{%- if include.type -%}
+    {%- case include.type -%}
+        {%- when "info" -%}
+            {% assign className = "primary" %}
+            {% assign iconName = "fa-info-circle" %}
+        {%- when "warning" -%}
+            {% assign className = "warning" %}
+            {% assign iconName = "fa-exclamation-circle" %}
+        {%- when "danger" -%}
+            {% assign className = "danger" %}
+            {% assign iconName = "fa-times-circle" %}
+        {%- when "success" -%}
+            {% assign className = "success" %}
+            {% assign iconName = "fa-check-circle" %}
+    {%- endcase -%}
+{%- endif -%}
+<div class="alert alert-{{- className -}}" role="alert">
+    <i class="fas {{ iconName }} fa-lg pe-1 "></i>{{ include.message }}
+</div>

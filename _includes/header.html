@@ -1,0 +1,20 @@
+<div class="d-flex flex-column bg-gradient-papaya">
+	<div class="d-flex flex-column flex-md-row flex-row px-1 px-sm-5 text-center text-md-start ">
+		<a class="text-decoration-none text-dark" href="{{ site.baseurl }}">
+			<div class="d-flex justify-content-center flex-row flex-md-column py-3">
+				<img height="128" src="https://i.imgur.com/ZRnQl61.png" alt="john.prantalos" />
+			</div>
+		</a>
+		<div class="p-0 p-sm-3 flex-fill">
+			<a href="{{ site.baseurl }}" class="text-decoration-none text-dark">
+				<h1 class="text-center text-lg-start">{{ site.title | escape }}</h1>
+				<h6 class="text-center text-lg-start">{{ site.description }}</h6>
+			</a>
+			{% include social.html %}
+		</div>
+	</div>
+	<div class="">
+		{%- include navbar.html -%}
+	</div>
+</div>
+	

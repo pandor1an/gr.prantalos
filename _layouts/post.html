@@ -1,0 +1,31 @@
+---
+layout: default
+---
+<div class="row">
+	<div class="col">
+		<article class="card text-dark bg-light border-0" itemscope itemtype="http://schema.org/BlogPosting">
+			{% if page.thumb %}
+				<img src="https://i.imgur.com/{{page.thumb}}.jpg" class="card-img-top rounded-0" alt="Post Thumb">
+			{% endif %}
+			<div class="card-body blog-body px-5 ">
+				<h6 class="card-subtitle mb-2 text-muted" itemprop="datePublished">
+					Δημοσιεύτηκε στις
+					{{ page.created | date: "%d/%m/%Y" }}
+					{% if page.updated %}
+					<small class="ms-1">
+							Ενημερώθηκε στις
+							{{ page.updated | date: "%d/%m/%Y" }}
+						</small>
+					{% endif %}
+				</h6>
+				<h1 class="card-title" itemprop="name headline">
+					{{ page.title | escape }}
+				</h1>
+				<p class="card-text" itemprop="articleBody">
+					{{ content }}
+				</p>
+			</div>
+			<a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
+		</article>
+	</div>
+</div>

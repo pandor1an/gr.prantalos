@@ -1,0 +1,68 @@
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<!-- Facebook meta -->
+<meta property="og:site_name" content="{{site.title}}"/>
+<meta property="og:type" content="article" />  <!-- https://developers.facebook.com/docs/reference/opengraph#object-type -->
+
+
+<meta property="og:locale" content="en_GR" />
+<meta name="twitter:site" content="@Pandor1an" />
+<meta name="twitter:creator" content="@Pandor1an" />
+<meta name="twitter:card" content="summary" />
+
+{% comment %}
+	TITLE
+{% endcomment %}
+{% if page.title %}
+	{% unless page.layout == "home" %}
+		<title>{{ page.title }} </title>
+		<meta property="og:title" content="{{ page.title }}" />
+		<meta property="twitter:title" content="{{ page.title }}" />
+	{% endunless %}
+{% endif %}
+{% if page.layout == "home" %}
+	<title>{{ site.site.title }}</title>
+	<meta property="og:title" content="{{ site.title }}" />
+	<meta property="twitter:title" content="{{ site.title }}" />
+{% endif %}
+
+{% comment %}
+	DESCRIPTION
+{% endcomment %}
+{% if page.excerpt %}
+	<meta name="description" content="{{ page.excerpt| strip_html }}" />
+	<meta property="og:description" content="{{ page.excerpt| strip_html }}" />
+{% else %}
+	<meta name="description" content="{{ site.description }}">
+	<meta property="og:description" content="{{ site.description }}" />
+{% endif %}
+
+{% comment %}
+	URL
+{% endcomment %}
+{% if page.layout == "home" %}
+	<meta property="og:url" content="{{site.url}}/{{ page.url }}" />
+{% else %}
+	<meta property="og:url" content="{{ site.url }}" />
+{% endif %}
+
+{% comment %}
+	ARTICLE
+{% endcomment %}
+{% if page.layout == "post" %}
+	<meta property="article:published_time" content="{{ page.created | date_to_xmlschema }}">
+{% endif %}
+
+
+
+{% comment %}
+	THUMBNAIL
+{% endcomment %}
+{% if page.thumb %}
+	<meta property="og:image" content="https://i.imgur.com/{{page.thumb}}.jpg" />
+{% else %}
+	<meta property="og:image" content="https://i.imgur.com/LFNlRJG.jpg" />
+{% endif %}
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
