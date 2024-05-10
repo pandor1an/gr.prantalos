@@ -1,4 +1,3 @@
-version: '3'
 services:
   jekyll:
       platform: linux/amd64
