@@ -20,7 +20,7 @@
 		(function(d){
 		var s = d.createElement("script");
 		s.setAttribute("data-language", "el");
-		s.setAttribute("data-account", "{{site.data.credentials.userway.accessibility}}");
+		s.setAttribute("data-account", "{{site.env.USERWAY_DATA_ACCOUNT}}");
 		s.setAttribute("src", "https://cdn.userway.org/widget.js");
 		(d.body || d.head).appendChild(s);})(document)
 	</script>

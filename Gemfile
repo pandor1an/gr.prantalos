@@ -26,3 +26,4 @@ end
 
 gem 'webrick', '~> 1.8'
 gem 'jekyll-paginate-v2', '~> 3.0'
+gem 'jekyll-environment-variables', '~> 1.0' 

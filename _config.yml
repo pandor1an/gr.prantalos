@@ -11,6 +11,7 @@ author: John Prantalos
 plugins:
   - jekyll-feed
   - jekyll-paginate-v2
+  - jekyll-environment-variables
 
 show_excerpts: true
 
