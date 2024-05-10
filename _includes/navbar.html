@@ -26,6 +26,11 @@
 						<span class="d-lg-none">Αρχικ΄γ</span>
 					</a>
 				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="https://about.prantalos.gr">
+						Βιογραφικό
+					</a>
+				</li>
 				{% assign pages = site.pages | where_exp: 'page', 'page.title and page.permalink' %}
 				{%- for page in pages -%}
 					{%- if page.title -%}
