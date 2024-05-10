@@ -7,12 +7,12 @@ layout: default
 			{%- for post in paginator.posts -%}
 				<div class="mx-0 my-3 {% unless post.featured %}mx-xl-5{% endunless %}">
 					<a class="text-decoration-none" href="{{ post.url }}">
-						<article class="d-flex bd-highlight flex-column flex-lg-row {% if post.featured %} bg-primary text-light{% else %}rounded border border-2 bg-light text-dark{% endif %}">
+						<article class="d-flex bd-highlight flex-column flex-md-row {% if post.featured %} bg-primary text-light{% else %}rounded border border-2 bg-light text-dark{% endif %}">
 							{% if post.thumb %}
-								<div class="d-none d-lg-flex {% if post.featured %}col-lg-6{% else %}col-lg-3{% endif %} bg-image-height" style="background-image: url('https://i.imgur.com/{{post.thumb}}l.jpg');"></div>
+								<div class="d-none d-md-flex {% if post.featured %}col-md-6{% else %}col-md-3{% endif %} bg-image-height" style="background-image: url('https://i.imgur.com/{{post.thumb}}l.jpg');"></div>
 							{% endif %}
 							<div class="col p-3">
-								{% if post.thumb %}<img class="d-lg-none rounded w-100 img-fluid" src="https://i.imgur.com/{{post.thumb}}l.jpg" />{% endif %}
+								{% if post.thumb %}<img class="d-md-none rounded w-100 img-fluid" src="https://i.imgur.com/{{post.thumb}}l.jpg" />{% endif %}
 								{% if post.featured %}
 									<div class="col-12 text-center">
 										<h1 class="text-warning fw-bolder bg-dark p-3 rounded-top-3">
@@ -26,9 +26,9 @@ layout: default
 										{{ post.created | date: "%d/%m/%Y" }}
 									</small>
 								</h6>
-								<h5 class="px-3 {% if post.featured %}display-4{% endif %}">{{ post.title | escape }}</h5>
+								<h5 class="px-3 {% if post.featured %}display-4{% else %}display-6{% endif %}">{{ post.title | escape }}</h5>
 								{%- if site.show_excerpts -%}
-									<div class="px-3 {% if post.featured %}h3{% endif %}">{{ post.excerpt }}</div>
+									<div class="px-3 lead {% if post.featured %}h3{% endif %}">{{ post.excerpt }}</div>
 								{%- endif -%} 
 							</div>
 						</article>
